@@ -7,7 +7,7 @@
     margin: 0 auto 20px auto;
     width: 340px;
     height: 340px;
-    background: url('../../assets/images/snake3.jpg') no-repeat;
+    background: url('/../../assets/images/snake3.jpg') no-repeat;
     border: 1px solid black;
     text-align: center;
   }

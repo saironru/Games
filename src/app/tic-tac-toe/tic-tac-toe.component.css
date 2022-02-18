@@ -24,13 +24,13 @@
 }
 .x {
     background-color: white;
-    background-image: url(./x.png);
+    background-image: url(/../../assets/images/x.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
 .o {
     background-color: white;
-    background-image: url(./o.png);
+    background-image: url(/../../assets/images/o.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
