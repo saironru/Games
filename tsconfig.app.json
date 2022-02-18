@@ -5,7 +5,7 @@
     "outDir": "./out-tsc/app",
     "types": [],
     "target": "es5",
-    "lib": [ "es2017", "dom", "esnext.array"]
+    "lib": ["es2019", "DOM", "ES6", "DOM.Iterable", "ScriptHost"]
   },
   "files": [
     "src/main.ts",
