@@ -1,0 +1,30 @@
+<div id="content">
+    <h3><em>Нахождение кротчайшего пути в лабиринте.</em></h3>
+    <p>Если существует несколько кратчайших путей, то показан будет только один из них.</p>
+    <div class="form-group">
+    Размеры лабиринта (клеток):
+        <div class="form-control">
+            <label for="sizex">X:</label>
+            <input type="number" [(ngModel)]="sizeX" name="sizex" id="sizex" (change)="boardBuild()" class="inputform" min="1">
+        </div>
+        <div class="form-control">
+            <label for="sizey">Y:</label>
+            <input type="number" [(ngModel)]="sizeY" name="sizey" id="sizey" (change)="boardBuild()" class="inputform" min="1">
+        </div>
+        <div class="form-control">
+            <label for="diagonally">Можно передвигаться на соседние клетки по диагонали</label>
+            <input type="checkbox" [(ngModel)]="diagonally" name="diagonally" id="diagonally" class="inputform" (click)="render()">
+        </div>
+    </div>
+    <p>Левая кнопка мыши - добавление/удаление препятствия</p>
+    <p>Правая кнопка мыши - добавление/удаление двух точек-целей, между которыми необходимо найти самый короткий путь в лабиринте (если он существует). На поле не может находиться одновременно больше двух таких точек (если на поле присутствует две точки-цели, то для того, чтоб указать новую точку-цель - сначала нужно удалить хотя бы одну старую).</p>
+    <button (click)="boardBuild()">Очистить поле</button>
+    <div id="board" [ngStyle]="{'width':boardWidth}">
+        <div class="row" *ngFor="let row of arrStyles; let y = index">
+            <div class="{{col}}" *ngFor="let col of arrStyles[y]; let x = index" id="id-{{y}}-{{x}}" (click)="foo($event)" (contextmenu)="foo($event)"></div>
+        </div>
+    </div>
+    <div class="message">
+        <p *ngIf="pointCounter === 2">{{message}}</p>
+    </div>
+</div>

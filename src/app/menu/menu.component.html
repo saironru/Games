@@ -1,0 +1,10 @@
+  <nav class="navbar vis">
+    <ul class="nav_list">
+      <li *ngFor="let gameMenuItem of gameMenu">
+        <a  routerLink="{{gameMenuItem.url}}">
+          <p class="link">{{ gameMenuItem.title }}</p>
+          <p class="hidden_link">{{ gameMenuItem.title }}</p>
+        </a>
+      </li>
+    </ul>
+  </nav>

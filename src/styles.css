@@ -1,0 +1,54 @@
+
+
+body {
+  background: #3a3a3a;
+  font-family: sans-serif;
+}
+
+body {
+  color: white;
+}
+  
+button {
+  position: relative;
+  margin: 7px auto;
+  cursor: pointer;
+  display: inline-block;
+  color: #000000; 
+  outline: none;
+  border-radius: 5px;
+  border-color: black;
+  border: 1px;
+  background: linear-gradient(rgb(240,240,240), rgb(220,220,220)) rgb(240,240,240);
+  box-shadow:
+   0 1px rgba(255,255,255,.1) inset,
+   0 3px 5px rgba(0,1,6,.4),
+   0 0 1px 1px rgba(0,1,6,.1);
+  transition: .2s ease-in-out;
+}
+button:hover:not(:active):not(:disabled) {
+  background: linear-gradient(rgb(255,255,255), rgb(205,205,205)) rgb(255,255,255);
+}
+button:active {
+  top: 1px;
+  background: linear-gradient(rgb(215,215,215), rgb(190,190,190)) rgb(215,215,215);
+  box-shadow:
+   0 0 1px rgba(0,0,0,.5) inset,
+   0 2px 3px rgba(0,0,0,.5) inset,
+   0 1px 1px rgba(255,255,255,.1);
+}
+button:disabled {
+  top: 1px;
+  background: linear-gradient(rgb(215,215,215), rgb(190,190,190)) rgb(215,215,215);
+  box-shadow:
+   0 0 1px rgba(0,0,0,.5) inset,
+   0 2px 3px rgba(0,0,0,.5) inset,
+   0 1px 1px rgba(255,255,255,.1);
+}
+
+input[type=radio]:hover { 
+  cursor: pointer; 
+}
+label:hover {
+  cursor: pointer;
+}

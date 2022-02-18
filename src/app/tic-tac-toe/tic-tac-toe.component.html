@@ -1,0 +1,40 @@
+<div id="content">
+    <h3><em>Классическая игра Крестики-Нолики против AI на поле размером 3x3 клетки</em></h3>
+    <p>Вы можете выбрать 2 уровня сложности:</p>
+    <ul>
+        <li><b>Стандартный</b> - <em>(выиграть AI возможно)</em> - AI отсеивает заведомо самые худшие варианты, а из оставшихся выбирает случайный ход.</li>
+        <li><b>Нереальный</b> - <em>(выиграть AI невозможно, возможна только ничья)</em> - AI на каждом ходу выбирает самый лучший из возможных ходов, и, независимо от вашего уровня мастерства, победить AI невозможно.
+            <br> (Гарантирует по крайней мере ничью для AI, в случае если вы ходите по наилучшей стратегии. Приводит к победе AI за минимальное количество ходов, в случае если вы ошибаетесь)</li>
+    </ul>
+    <div class="options">
+    <h4>Настройки игры:</h4>
+        <div class="form">
+            <p>Уровень сложности:</p>
+            <input name="difficulty" id="easy" class="toggle toggle-left" type="radio" [value]="false" checked [(ngModel)]="isGodMode" (change)="clearBoard()">
+            <label for="easy" class="btn unselectable">Стандартный</label>
+            <input name="difficulty" id="godmode" class="toggle toggle-right" type="radio" [value]="true" [(ngModel)]="isGodMode" (change)="clearBoard()">
+            <label for="godmode" class="btn unselectable">Нереальный</label>
+        </div>
+        <div class="form">
+            <p>Первый ход:</p>
+            <input name="firstmove" id="player" class="toggle toggle-left"  type="radio" [value]="false" checked [(ngModel)]="isfirstMoveAI" (change)="clearBoard()">
+            <label for="player" class="btn unselectable">Player</label>      
+            <input name="firstmove" id="ai" class="toggle toggle-right" type="radio" [value]="true"  [(ngModel)]="isfirstMoveAI" (change)="clearBoard()">
+            <label for="ai" class="btn unselectable">AI</label>
+        </div>
+    </div>
+    <button (click)="newGame()">Новая игра</button>
+
+    <div class="message" [class]="messageClass" [ngStyle]="{'width':boardWidth}">
+        <p *ngIf="isGameEnd">{{message}}</p>
+    </div>
+
+    <div id="board" [ngStyle]="{'width':boardWidth}">
+        <div class="row" *ngFor="let row of board; let y = index">
+            <div class="{{col}}" *ngFor="let col of board[y]; let x = index" id="id-{{y}}-{{x}}" (click)="clickOnBoard($event)" (contextmenu)="clickOnBoard($event)"></div>
+        </div>
+    </div>
+
+
+
+</div>

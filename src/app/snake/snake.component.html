@@ -1,0 +1,38 @@
+
+<div class="content">
+
+<div id='score'>Score: <span id='points'>{{ points }}</span> points</div>
+<div id='board'>
+    <div *ngIf="isGameOver; else game">
+        <p>GAME OVER<p>
+        <p>Score: {{points}} points</p>
+    </div>
+    <ng-template #game>
+        <div class="row" *ngFor="let row of boardHTML">
+            <div *ngFor="let col of row" [class]="col"></div>
+        </div> 
+    </ng-template>
+</div> 
+<p>Game</p>
+<div id='gamecontrol'>
+    <button id='btnstart' (click)="btnStartFn()">Start</button>
+    <button id='btnpause' (click)="btnPauseFn()">Pause</button>
+    <button id='btnresume' (click)="btnResumeFn()">Resume</button>
+</div>  
+<p>Music</p>  
+<div id="musiccontrol">
+    <i class="fa fa-play-circle" aria-hidden="true" (click)="playAudio()"></i>
+    <i class="fa fa-pause-circle" aria-hidden="true" (click)="pauseAudio()"></i>
+    <i class="fa fa-stop-circle" aria-hidden="true" (click)="stopAudio()"></i>
+</div>
+    <br>
+    
+    <br>
+    <label for="coordinates">Показывать координаты
+    <input type="checkbox" (change)="coordinatesEnabled = !coordinatesEnabled" name="coordinates" id="coordinates"></label>
+    <div *ngIf="coordinatesEnabled">
+    <div class='dev'>Координаты змеи:  <span id='devinfo1'>{{ devinfo1HTML }}</span></div>
+    <div class='dev'>Координаты пустых клеток:  <span id='devinfo2'>{{ devinfo2HTML }}</span></div> 
+    </div>
+
+</div>

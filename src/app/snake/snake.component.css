@@ -1,0 +1,86 @@
+
+#board {
+    font-size: 28px;
+    font-family: Courier, monospace;
+    font-weight: 500;
+    line-height: 0;
+    margin: 0 auto 20px auto;
+    width: 340px;
+    height: 340px;
+    background: url('../../assets/images/snake3.jpg') no-repeat;
+    border: 1px solid black;
+    text-align: center;
+  }
+  #board > p {
+    display: block;
+    font-size: 2rem;
+    word-wrap: break-word;
+    line-height: normal;
+    margin: 10px 0 0 0;
+  }
+.row {
+    line-height: 0;
+}
+.row > div {
+    border: 1px solid black;
+}
+  .field {
+  width: 32px;
+  height: 32px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  }
+  .empty {
+  background-color: #ccc;
+  }
+  .snake {
+  background-color: green;
+  }
+  .food {
+  background-color: red;
+  }
+  .dev {
+  color: #aaa;
+  font-size: 14px;
+  }
+
+  h1 {
+    color: green;
+  }
+
+  #musiccontrol {
+    margin: 0 0 20px 0;
+  }
+  #musiccontrol > i {
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 0 10px;
+    color: white;
+    opacity: 1;
+  }
+  #musiccontrol > i:hover {
+    opacity: 0.9;
+  }
+  #musiccontrol > i:active {
+    opacity: 0.5;
+  }
+  .content {
+    margin: auto;
+    width: 340px;
+  }
+
+  #score {
+    color: white;
+    text-align: center;
+  }
+  #gamecontrol {
+    margin: 0 0 20px 0;
+  }
+  #gamecontrol > button {
+    cursor: pointer;
+    margin: 0 10px;
+  }
+
+ 

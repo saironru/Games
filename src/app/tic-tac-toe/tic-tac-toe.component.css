@@ -1,0 +1,139 @@
+:host h1 {
+    color: red
+}
+#content {
+    max-width: 800px;
+    margin: auto;
+}
+#board {
+    border: solid 1px black;
+    cursor: pointer;
+    margin: 0 auto 50px auto;
+}
+.row {
+    line-height: 0;
+}
+.row > div {
+    width: 128px;
+    height: 128px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+.x {
+    background-color: white;
+    background-image: url(./x.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.o {
+    background-color: white;
+    background-image: url(./o.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.winhuman {
+    background-color: #07c207 !important;
+    animation: flash 800ms ease-in;
+}
+.winai {
+    background-color: red !important;
+    animation: flash 800ms ease-in;
+}
+.wintie {
+    background-color: rgb(185, 185, 185) !important;
+    animation: flash 800ms ease-in;
+}
+.inputform {
+    width: 33px;
+    margin: 0 5px;
+}
+.options {
+    margin: 40px auto 0px auto;
+    width: max-content;
+    text-align: center;
+}
+.form {
+    display: block;
+    margin: 7px 0;
+}
+button {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 15px;
+    margin-bottom: 50px;
+    font-size: 1.4rem;
+}
+
+
+
+
+  @keyframes flash {
+    0% {
+      opacity: 0;
+      box-shadow: none;
+    }
+
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 25px #fff;
+    }
+
+    100% {   
+        box-shadow: none;
+    }
+
+
+  }
+
+  .message {
+      height: 30px;
+      margin: auto;
+      font-size: 20px;
+      padding: 10px;
+      padding: 10px 0; 
+  }
+
+  .message > p {
+      margin: auto;
+      color: black;
+      text-align: center;
+  }
+
+
+  .btn {
+    border: 2px solid black;
+    display: inline-block;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    transition: background-color 400ms ease, color 400ms ease;
+    min-width: 100px;
+  }
+  
+  input[type=radio].toggle {
+    display: none;
+  }
+
+  input[type=radio].toggle.toggle-right + label {
+  margin-left: -2px;
+}
+
+input[type=radio].toggle:checked + label {
+    cursor: default;
+    color: black;
+    background-color: white;
+  }
+
+  .unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
+  }

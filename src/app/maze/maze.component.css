@@ -1,0 +1,78 @@
+:host h1 {
+    color: red
+}
+#content {
+    margin: 0 50px;
+}
+#board {
+    border: solid 1px black;
+    cursor: pointer;
+}
+.row {
+    line-height: 0;
+}
+.row > div {
+    width: 32px;
+    height: 32px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.empty {
+    background-color: #ccc;
+}
+.wall {
+    background-color: black;
+}
+.point {
+    background-color: red;
+}
+.way {
+    background-color: gold;
+    animation: flash 800ms ease-in;
+}
+.inputform {
+    width: 33px;
+    margin: 0 5px;
+}
+.form-group {
+    margin: 0 0 0 0;
+}
+.form-control {
+    display: block;
+    margin: 7px 0;
+}
+button {
+    margin: 10px 0 20px 0;
+}
+
+
+
+
+  @keyframes flash {
+    0% {
+      opacity: 0;
+      box-shadow: none;
+    }
+
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 25px rgb(243, 245, 114);
+    }
+
+    100% {   
+        box-shadow: none;
+    }
+
+
+  }
+
+  .message {
+      height: 30px;
+      margin: 10px 0;
+  }
+
+  .message > p {
+      margin: 0;
+  }
