@@ -99,8 +99,13 @@ export class TicTacToeComponent implements OnInit {
     this.gameON = false;
   }
 
+
+  flatDeep(arr: Array<any>, d = 1): any {
+    return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? this.flatDeep(val, d - 1) : val), []) : arr.slice();
+  };
+
   hashBoard(board: Board, depth: number, isMaximizing: boolean) {
-    let hash = board.flat().join('-');
+    let hash = this.flatDeep(board).join('-');
     hash += '*' + depth;
     hash += '*' + isMaximizing;
     return hash;
